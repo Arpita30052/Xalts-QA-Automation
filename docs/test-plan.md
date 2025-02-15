@@ -42,8 +42,6 @@ Functional testing ensures that each feature works as expected.
 4. Login with an invalid password → Error message  
 5. Login with a non-existing account → Error message  
 6. Login with spaces before/after email → Error message  
-7. Login without entering credentials → Error message  
-8. Login with an expired session → Redirect to login page  
 
 ### **Sign Out**  
 ✅ **Positive Test Cases:**  
@@ -75,7 +73,6 @@ Functional testing ensures that each feature works as expected.
 ### 3.2 UI Testing  
 - Verify button placements, input fields, and alignment  
 - Check responsiveness on different screen sizes  
-- Validate UI elements on dark and light modes  
 
 ### 3.3 API Testing  
 - Validate API responses and status codes  
@@ -84,9 +81,7 @@ Functional testing ensures that each feature works as expected.
 
 ### 3.4 Security Testing  
 - Ensure password hashing  
-- Test SQL injection scenarios  
 - Verify session expiration after inactivity  
-- Check CSRF protection on form submissions  
 
 ### 3.5 Performance Testing  
 - Load test sign-in with multiple users  
@@ -96,7 +91,6 @@ Functional testing ensures that each feature works as expected.
 ### 3.6 Negative Testing  
 - Attempt actions with missing mandatory fields  
 - Enter invalid data formats  
-- Submit forms with JavaScript disabled  
 
 ## 4. Automation Scope  
 Automated test cases will be written for:  
