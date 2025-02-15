@@ -1,99 +1,105 @@
-Test Plan for Xalts Blockchain Portal
+# Test Plan for Xalts Blockchain Portal
 
-1. Introduction
-
+## 1. Introduction  
 This test plan outlines the testing strategy for the Xalts Blockchain Portal, covering various testing types including functional, UI, API, security, performance, and negative testing.
 
-2. Scope
+## 2. Scope  
+The testing will cover the following functionalities:  
+- Sign Up  
+- Sign In  
+- Sign Out  
+- Submit Request to Onboard Nodes to Existing Blockchain  
+- Submit Request to Create a New Private Blockchain  
 
-The testing will cover the following functionalities:
+## 3. Test Strategy  
 
-Sign Up
+### 3.1 Functional Testing  
+Functional testing ensures that each feature works as expected.  
 
-Sign In
+#### Test Cases:  
 
-Sign Out
+### **Sign Up**  
+✅ **Positive Test Cases:**  
+1. Sign up with valid email and password → Success  
+2. Sign up with a strong password (including uppercase, lowercase, special characters, and numbers) → Success  
+3. Sign up using different valid email domains (e.g., Gmail, Yahoo, Outlook) → Success  
 
-Submit Request to Onboard Nodes to Existing Blockchain
+❌ **Negative Test Cases:**  
+4. Sign up with an invalid email format (e.g., `testuser@com`) → Error message  
+5. Sign up with a password less than required characters → Error message  
+6. Sign up with an existing email → Error message  
+7. Sign up with only spaces in the email field → Error message  
+8. Sign up with a password containing only numbers → Error message  
+9. Sign up with an empty password field → Error message  
 
-Submit Request to Create a New Private Blockchain
+### **Sign In**  
+✅ **Positive Test Cases:**  
+1. Login with valid credentials → Successful login  
+2. Login with a different valid user account → Successful login  
+3. Login after refreshing the page → Successful login  
 
-3. Test Strategy
+❌ **Negative Test Cases:**  
+4. Login with an invalid password → Error message  
+5. Login with a non-existing account → Error message  
+6. Login with spaces before/after email → Error message  
+7. Login without entering credentials → Error message  
+8. Login with an expired session → Redirect to login page  
 
-3.1 Functional Testing
+### **Sign Out**  
+✅ **Positive Test Cases:**  
+1. Click on sign-out button → Redirect to login page  
+2. Try accessing the dashboard after logout → Redirect to login page  
 
-Functional testing ensures that each feature works as expected.
+### **Submit Request To Onboard Nodes to Existing Blockchain**  
+✅ **Positive Test Cases:**  
+1. Add valid node details → Success  
+2. Add multiple valid nodes at once → Success  
+3. Submit request and verify the request ID is generated → Success  
 
-Test Cases:
+❌ **Negative Test Cases:**  
+4. Add invalid node ID format → Error message  
+5. Add invalid IP format → Error message  
+6. Submit with empty node list → Error message  
+7. Submit with duplicate node IDs → Error message  
 
-Sign Up
+### **Submit Request To Create New Private Blockchain**  
+✅ **Positive Test Cases:**  
+1. Create a private blockchain with valid network name and wallet address → Success  
+2. Create a private blockchain with a long but valid network name → Success  
 
-Valid email and password → Success
+❌ **Negative Test Cases:**  
+3. Create a blockchain with an invalid wallet address format → Error message  
+4. Submit request with an empty network name → Error message  
+5. Submit request with special characters in the network name → Error message  
 
-Invalid email format → Error message
+### 3.2 UI Testing  
+- Verify button placements, input fields, and alignment  
+- Check responsiveness on different screen sizes  
+- Validate UI elements on dark and light modes  
 
-Password less than required characters → Error message
+### 3.3 API Testing  
+- Validate API responses and status codes  
+- Verify error handling for incorrect payloads  
+- Ensure API response time meets performance expectations  
 
-Existing email → Error message
+### 3.4 Security Testing  
+- Ensure password hashing  
+- Test SQL injection scenarios  
+- Verify session expiration after inactivity  
+- Check CSRF protection on form submissions  
 
-Sign In
+### 3.5 Performance Testing  
+- Load test sign-in with multiple users  
+- Measure response time for form submissions  
+- Verify system behavior under high user load  
 
-Valid credentials → Successful login
+### 3.6 Negative Testing  
+- Attempt actions with missing mandatory fields  
+- Enter invalid data formats  
+- Submit forms with JavaScript disabled  
 
-Invalid password → Error message
-
-Non-existing account → Error message
-
-Sign Out
-
-Click on sign-out button → Redirect to login page
-
-Submit Request To Onboard Nodes to Existing Blockchain
-
-Add valid node details → Success
-
-Add invalid node ID format → Error message
-
-Add invalid IP format → Error message
-
-Submit with empty node list → Error message
-
-Submit Request To Create New Private Blockchain
-
-Valid network name and wallet address → Success
-
-Invalid wallet address format → Error message
-
-Submit with empty fields → Error message
-
-3.2 UI Testing
-
-Verify button placements, input fields, and alignment
-
-Check responsiveness on different screen sizes
-
-3.3 API Testing
-
-Validate API responses and status codes
-
-Verify error handling for incorrect payloads
-
-3.4 Security Testing
-
-Ensure password hashing
-
-Test SQL injection scenarios
-
-Verify session expiration after inactivity
-
-3.5 Performance Testing
-
-Load test sign-in with multiple users
-
-Measure response time for form submissions
-
-3.6 Negative Testing
-
-Attempt actions with missing mandatory fields
-
-Enter invalid data formats
+## 4. Automation Scope  
+Automated test cases will be written for:  
+1. Sign Up  
+2. Sign In  
+3. Sign Out   
