@@ -45,8 +45,7 @@ Functional testing ensures that each feature works as expected.
 
 ### **Sign Out**  
 ✅ **Positive Test Cases:**  
-1. Click on sign-out button → Redirect to login page  
-2. Try accessing the dashboard after logout → Redirect to login page  
+1. Click on sign-out button → Redirect to Dashboard  
 
 ### **Submit Request To Onboard Nodes to Existing Blockchain**  
 ✅ **Positive Test Cases:**  
@@ -57,8 +56,7 @@ Functional testing ensures that each feature works as expected.
 ❌ **Negative Test Cases:**  
 4. Add invalid node ID format → Error message  
 5. Add invalid IP format → Error message  
-6. Submit with empty node list → Error message  
-7. Submit with duplicate node IDs → Error message  
+6. Submit with empty node list → ADD node button will not be enabled  
 
 ### **Submit Request To Create New Private Blockchain**  
 ✅ **Positive Test Cases:**  
@@ -67,7 +65,7 @@ Functional testing ensures that each feature works as expected.
 
 ❌ **Negative Test Cases:**  
 3. Create a blockchain with an invalid wallet address format → Error message  
-4. Submit request with an empty network name → Error message  
+4. Submit request with an empty network name → Submit button will not be enabled 
 5. Submit request with special characters in the network name → Error message  
 
 ### 3.2 UI Testing  
